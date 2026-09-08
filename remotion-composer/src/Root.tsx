@@ -16,6 +16,7 @@ import { ProductReveal, ProductRevealProps } from "./components/ProductReveal";
 import { CaptionOverlay, WordCaption } from "./components/CaptionOverlay";
 import { CollageBurst, CollageBurstProps } from "./CollageBurst";
 import { LyricOverlay, LyricOverlayProps } from "./LyricOverlay";
+import { ShortsComposition } from "./ShortsComposition";
 
 // ---------------------------------------------------------------------------
 // Theme System — prevents every video from looking like dark fintech
@@ -329,6 +330,25 @@ export const Root: React.FC = () => {
           fadeOutSeconds: 1.5,
           overlay: true,
         } as EndTagProps}
+      />
+      <Composition
+        id="ShortsComposition"
+        component={ShortsComposition}
+        durationInFrames={900}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          bRollSrc: "",
+          captions: [
+            { word: "Merak", startMs: 3000, endMs: 3500 },
+            { word: "uyandırıcı", startMs: 3500, endMs: 4000 },
+            { word: "içerik", startMs: 4000, endMs: 4500 },
+          ],
+          hookText: "BU VİDEO SENİ ŞAŞIRTACAK!",
+          accentColor: "#FFE600",
+          progressBgColor: "rgba(0,0,0,0.5)",
+        }}
       />
     </>
   );
